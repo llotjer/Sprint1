@@ -30,27 +30,27 @@ header{
     background-color: rgb(213, 0, 100);
     flex-grow: 1;
     margin: 8px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .nav{
     background-color: rgb(213, 0, 100);
     flex-grow: 2;
     margin: 8px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .social{
     background-color: rgb(213, 0, 100);
     flex-grow: 1;
     margin: 8px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .banner{
     background-color: yellow;
     margin: 8px;
-    padding: 10px;
+    padding: 5px;
 }
 
 section{
@@ -76,7 +76,7 @@ section{
 .article{
 
     background-color: rgb(0, 68, 151);
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
 
 }
@@ -84,7 +84,7 @@ section{
 .navegacion{
 
     background-color: rgb(0, 114, 253);
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     grid-row-start: 3;
     grid-row-end: 3;
@@ -95,16 +95,13 @@ section{
 .right{
 
     background-color: rgb(255, 0, 136);
-    padding: 7px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px;
    
     
 }
 
 .publicidad{
-   
+    text-align: center;
     background-color: rgb(251, 255, 0);
     padding: 5px;
     margin: 5px;
