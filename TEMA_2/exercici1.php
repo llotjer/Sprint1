@@ -2,16 +2,16 @@
 
 // Exercici 1
 
-$cognom = "Reynal";
-$edat = 40;
+$surname = "Reynal";
+$age = 40;
 $pi = 3.1416;
 $boolean = true;
 
-echo $cognom . "<br>", $edat . "<br>", $pi . "<br>", $boolean;
+echo $surname . "<br>", $age . "<br>", $pi . "<br>", $boolean;
 
-const NOM = "Xavi";
+const NAME = "Xavi";
 
-echo "<h1>" . NOM . "</h1>";
+echo "<h1>" . NAME . "</h1>";
 
 // Exercici 2
 
@@ -23,9 +23,11 @@ echo strtoupper($greet) . "<br>";
 echo strlen($greet) . "<br>";
 echo strrev($greet) . "<br>";
 echo $greet . " " . $str . "<br>";
-
+echo "<br>";
 
 // Exercici 3
+
+//a)
 
 $x = 1;
 $y = 2;
@@ -41,9 +43,98 @@ echo "Valor del mòdul entre variables x i y, i n i m: " . $x % $y . ", ", $n % 
 echo "El doble de cada variable: " . $x * 2 . ", ", $y * 2 . ", ", $n * 2 . ", ", $m * 2 . "<br>";
 echo "Valor de la suma entre totes les variables: " . $x + $y + $n + $m . "<br>";
 echo "Valor del producte entre totes les variables: " . $x * $y * $n * $m . "<br>";
+echo "<br>";
 
+//b)
 
-$array = ['+', '-', '*', '/', '%'];
-$operant = array_rand($array);
-echo $operant;
+$operator = array('+', '-', '*', '/', '%');
+//$randomOperator = $operator[array_rand($operator)];
+$randomOperator = $operator[rand(0, count($operator) - 1)];
+function calculate($x, $y, $randomOperator){
 
+    $response = "";
+
+    if($randomOperator == '+'){
+        $response =  "El resultat de la suma és : " . $x + $y;
+    }elseif($randomOperator == '-'){
+        $response = "El resultat de la resta és : " . $x - $y;
+    }elseif($randomOperator == '*'){
+        $response = "El resultat de la multiplicació és : " . $x * $y;
+    }elseif($randomOperator == '/'){
+        $response = "El resultat de la divisió és : " . $x / $y;
+    }else{
+        $response = "Operador incorrecte.";
+    }
+
+    return $response;
+}
+
+echo calculate($x, $y, $randomOperator);
+echo "<br>";
+
+//Exercici 4
+
+function counting(){
+
+    $inc = array(0, 1, 2, 3);
+    $incRandom = $inc[array_rand($inc)];
+    $inc = $incRandom;
+    $count = "";
+    $sum = 0;
+
+    for($i = 1; $i <= 10; $i = $i + $inc){
+       
+        $sum += $i;
+        $count .= ($i == 10 || ($i == 9 && $inc == 2)) ? strval($i) : strval($i) . " + " ;
+        
+    }
+    return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $inc . " en " . $inc . ".";
+}
+   
+echo counting();
+echo "<br>";
+
+//Exercici 5
+
+function grau(){
+
+$response = "";
+$nota = array(1,2,3,4,5,6,7,8,9,10);
+$notaRandom = $nota[array_rand($nota)];
+$NOTA60 = 6;
+$NOTA45 = 4.5;
+$NOTA33 = 3.3;
+
+if($notaRandom >= $NOTA60){
+    $response = "Nota: " . $notaRandom . " - Grau : Primera Divisió.";
+}elseif($notaRandom < $NOTA60 && $notaRandom >= $NOTA45){
+    $response = "Nota: " . $notaRandom . " - Grau : Segona Divisió.";
+}elseif($notaRandom < $NOTA45 && $notaRandom >= $NOTA33){
+    $response = "Nota: " . $notaRandom . " - Grau : Tercera Divisió.";
+}elseif($notaRandom < $NOTA33){
+    $response = "Nota: " . $notaRandom . " - L'alumne reprovarà.";
+}
+
+return $response;
+
+}
+
+echo grau();
+echo "<br>";
+
+//Exercici 6
+
+function isBitten(){
+
+    $prob = array(0,1);
+    $probRandom = $prob[array_rand($prob)];
+    $bitten = false;
+
+    if($probRandom == 1){
+        $bitten = true;
+    }
+   
+    return $bitten;
+}
+
+echo isBitten();
