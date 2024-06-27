@@ -48,7 +48,6 @@ echo "<br>";
 //b)
 
 $operator = array('+', '-', '*', '/', '%');
-//$randomOperator = $operator[array_rand($operator)];
 $randomOperator = $operator[rand(0, count($operator) - 1)];
 function calculate($x, $y, $randomOperator){
 
