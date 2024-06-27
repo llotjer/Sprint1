@@ -6,55 +6,59 @@ header{
     background-color: black;  
     padding: 20px;
     margin-bottom:20px;
+    max-width: 1200px;
      
 
 }
 
 .up{
 
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
-    display: flex; 
-    flex-direction: column;   
+    display: flex;    
     background-color: rgb(0, 61, 167);
 
 
 }
 
+@media only screen and (max-width: 768px) {
+    .up {
+        display: block;
+
+    }
+}
+
 .down{
     
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(255, 183, 0);
 }
 
 .logo{
     background-color: rgb(213, 0, 100);
     flex-grow: 1;
-    margin: 10px;
-
+    margin: 8px;
+    padding: 5px;
 }
 
 .nav{
     background-color: rgb(213, 0, 100);
     flex-grow: 2;
-    margin: 10px;
-    
+    margin: 8px;
+    padding: 5px;
 }
 
 .social{
     background-color: rgb(213, 0, 100);
     flex-grow: 1;
-    margin: 10px;
-
+    margin: 8px;
+    padding: 5px;
 }
 
 .banner{
-
-    font-size: 30px;
     background-color: yellow;
     margin: 8px;
     padding: 5px;
-    
 }
 
 section{
@@ -63,7 +67,13 @@ section{
     padding: 20px;
     margin-bottom: 20px;
     display: grid;
-    grid-template-rows: 75% 25%;
+    grid-template-columns: 75% 25%;
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        display: block;
+    }
 }
 
 .left{
@@ -73,16 +83,30 @@ section{
     display: grid;
     grid-template-rows: 33% 33% 33% ;
     grid-template-columns: 50% 50%;
-    margin-bottom: 10px;
-    max-height: 275px;
+    margin-right: 20px;
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .left {
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .left {
+        margin-bottom: 20px;
+        margin-right: 0px;
+        display: block;
+    }
 }
 
 .article{
 
     background-color: rgb(0, 68, 151);
-    text-align: start;
     padding: 5px;
-    margin: 15px;
+    margin: 10px;
 
 }
 
@@ -90,28 +114,27 @@ section{
 
     background-color: rgb(0, 114, 253);
     padding: 5px;
-    margin: 15px;
+    margin: 10px;
     grid-row-start: 3;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 3;
-   
 }
 
 .right{
 
     background-color: rgb(255, 0, 136);
-    padding: 15px;
- 
+    padding: 10px;
+    justify-content: space-around;
+    
 }
 
 .publicidad{
 
     background-color: rgb(251, 255, 0);
-    margin: 5px;
-    margin-bottom: 15px;
     padding: 5px;
-    max-height: 20px;
+    margin: 5px;
+   
     
 }
 
