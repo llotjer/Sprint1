@@ -1,14 +1,12 @@
 body{
     font-family: 'Courier New', Courier, monospace;
+    max-width : 1200px;
 }
 
 header{
     background-color: black;  
     padding: 20px;
     margin-bottom:20px;
-    max-width: 1200px;
-     
-
 }
 
 .up{
