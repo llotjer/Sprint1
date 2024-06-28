@@ -94,7 +94,7 @@ echo "<br>";
 
 echo "<h3>Exercici 5</h3>" . "<br>";
 
-function grau(){
+function discerningByNotes(){
 
 $response = "";
 $nota = array(1,2,3,4,5,6,7,8,9,10);
@@ -117,7 +117,7 @@ return $response;
 
 }
 
-echo grau() . "<br>";
+echo discerningByNotes() . "<br>";
 echo "<br>";
 
 echo "<h3>Exercici 6</h3>" . "<br>";
