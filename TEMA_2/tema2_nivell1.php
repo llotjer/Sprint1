@@ -74,16 +74,16 @@ echo "<br>";
 echo "<h3>Exercici 4</h3>" . "<br>";
 
 function counting(){
-
+    define("NUM", 10);
     $inc = array(0, 1, 2, 3);
     $incRandom = $inc[array_rand($inc)];
     $count = "";
     $sum = 0;
 
-    for($i = 1; $i <= 10; $i = $i + $incRandom){
+    for($i = 1; $i <= NUM; $i = $i + $incRandom){
        
         $sum += $i;
-        $count .= ($i == 10 || ($i == 9 && $incRandom == 2)) ? strval($i) : strval($i) . " + " ;
+        $count .= ($i == NUM || ($i == (NUM - 1) && $incRandom == 2)) ? strval($i) : strval($i) . " + " ;
         
     }
     return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $incRandom . " en " . $incRandom . ".";
@@ -99,17 +99,17 @@ function grau(){
 $response = "";
 $nota = array(1,2,3,4,5,6,7,8,9,10);
 $notaRandom = $nota[array_rand($nota)];
-$NOTA60 = 6;
-$NOTA45 = 4.5;
-$NOTA33 = 3.3;
+define("NOTA60", 6);
+define("NOTA45", 4.5);
+define("NOTA33", 3.3);
 
-if($notaRandom >= $NOTA60){
+if($notaRandom >= NOTA60){
     $response = "Nota: " . $notaRandom . " - Grau : Primera Divisió.";
-}elseif($notaRandom < $NOTA60 && $notaRandom >= $NOTA45){
+}elseif($notaRandom < NOTA60 && $notaRandom >= NOTA45){
     $response = "Nota: " . $notaRandom . " - Grau : Segona Divisió.";
-}elseif($notaRandom < $NOTA45 && $notaRandom >= $NOTA33){
+}elseif($notaRandom < NOTA45 && $notaRandom >= NOTA33){
     $response = "Nota: " . $notaRandom . " - Grau : Tercera Divisió.";
-}elseif($notaRandom < $NOTA33){
+}elseif($notaRandom < NOTA33){
     $response = "Nota: " . $notaRandom . " - L'alumne reprovarà.";
 }
 
