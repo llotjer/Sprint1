@@ -49,7 +49,7 @@ echo "<h5>b)</h5>" . "<br>";
 
 $operator = array('+', '-', '*', '/', '%');
 $randomOperator = $operator[rand(0, count($operator) - 1)];
-function calculate($x, $y, $randomOperator){
+function calculate(int $x, int $y, string $randomOperator) : String{
 
     $response = "";
 
