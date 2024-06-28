@@ -1,6 +1,6 @@
 <?php 
 
-// Exercici 1
+echo "<h3>Exercici 1</h3>" . "<br>";
 
 $surname = "Reynal";
 $age = 40;
@@ -13,7 +13,7 @@ const NAME = "Xavi";
 
 echo "<h1>" . NAME . "</h1>";
 
-// Exercici 2
+echo "<h3>Exercici 2</h3>" . "<br>";
 
 $greet = "Hello, World";
 $str = "Aquest és el curs de PHP";
@@ -25,9 +25,9 @@ echo strrev($greet) . "<br>";
 echo $greet . " " . $str . "<br>";
 echo "<br>";
 
-// Exercici 3
+echo "<h3>Exercici 3</h3>" . "<br>";
 
-//a)
+echo "<h5>a)</h5>" . "<br>";
 
 $x = 1;
 $y = 2;
@@ -45,7 +45,7 @@ echo "Valor de la suma entre totes les variables: " . $x + $y + $n + $m . "<br>"
 echo "Valor del producte entre totes les variables: " . $x * $y * $n * $m . "<br>";
 echo "<br>";
 
-//b)
+echo "<h5>b)</h5>" . "<br>";
 
 $operator = array('+', '-', '*', '/', '%');
 $randomOperator = $operator[rand(0, count($operator) - 1)];
@@ -68,10 +68,10 @@ function calculate($x, $y, $randomOperator){
     return $response;
 }
 
-echo calculate($x, $y, $randomOperator);
+echo calculate($x, $y, $randomOperator) . "<br>";
 echo "<br>";
 
-//Exercici 4
+echo "<h3>Exercici 4</h3>" . "<br>";
 
 function counting(){
 
@@ -90,10 +90,10 @@ function counting(){
     return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $inc . " en " . $inc . ".";
 }
    
-echo counting();
+echo counting() . "<br>";
 echo "<br>";
 
-//Exercici 5
+echo "<h3>Exercici 5</h3>" . "<br>";
 
 function grau(){
 
@@ -118,10 +118,10 @@ return $response;
 
 }
 
-echo grau();
+echo grau() . "<br>";
 echo "<br>";
 
-//Exercici 6
+echo "<h3>Exercici 6</h3>" . "<br>";
 
 function isBitten(){
 
@@ -135,4 +135,8 @@ function isBitten(){
     return $bitten;
 }
 
-echo isBitten();
+if(isBitten()){
+    echo "Charlie bites you!";
+}else{
+    echo "Charlie didn't bite you...";
+}
