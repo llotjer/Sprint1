@@ -9,7 +9,7 @@ $boolean = true;
 
 echo $surname . "<br>", $age . "<br>", $pi . "<br>", $boolean;
 
-const NAME = "Xavi";
+define("NAME", "Xavi");
 
 echo "<h1>" . NAME . "</h1>";
 
