@@ -77,17 +77,16 @@ function counting(){
 
     $inc = array(0, 1, 2, 3);
     $incRandom = $inc[array_rand($inc)];
-    $inc = $incRandom;
     $count = "";
     $sum = 0;
 
-    for($i = 1; $i <= 10; $i = $i + $inc){
+    for($i = 1; $i <= 10; $i = $i + $incRandom){
        
         $sum += $i;
-        $count .= ($i == 10 || ($i == 9 && $inc == 2)) ? strval($i) : strval($i) . " + " ;
+        $count .= ($i == 10 || ($i == 9 && $incRandom == 2)) ? strval($i) : strval($i) . " + " ;
         
     }
-    return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $inc . " en " . $inc . ".";
+    return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $incRandom . " en " . $incRandom . ".";
 }
    
 echo counting() . "<br>";
