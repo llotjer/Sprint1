@@ -22,7 +22,7 @@ echo $greet . "<br>";
 echo strtoupper($greet) . "<br>";
 echo strlen($greet) . "<br>";
 echo strrev($greet) . "<br>";
-echo $greet . " " . $str . "<br>";
+echo $greet . ". " . $str . "<br>";
 echo "<br>";
 
 echo "<h3>Exercici 3</h3>" . "<br>";
