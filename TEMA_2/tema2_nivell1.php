@@ -125,11 +125,10 @@ echo "<br>";
 
 function isBitten(){
 
-    $prob = array(0,1);
-    $probRandom = $prob[array_rand($prob)];
+    $prob = rand(0,1);
     $bitten = false;
 
-    if($probRandom == 1){
+    if($prob == 1){
         $bitten = true;
     }
    
