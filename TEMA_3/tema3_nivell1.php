@@ -18,5 +18,38 @@ $X = array_values($X);
 print_r($X);
 echo "<br>";
 $nums = count($X);
-echo $nums;
+echo $nums . "<br>";
+
+echo "<h3>Exercici 3</h3><br>";
+
+$words = array("hola", "PHP", "html");
+$specialChar = 'h';
+
+function checkSpecialChar(array $words, string $specialChar) : bool{
+    
+    $match = true;
+
+    foreach($words as $word){
+
+        if(stripos($word, $specialChar) === false){
+            $match = false;
+        }
+    }
+
+    return $match;
+
+}
+
+if(checkSpecialChar($words, $specialChar) !== false){
+    echo "true" . "<br>";
+} else {
+    echo "false" . "<br>";
+}
+
+
+echo "<h3>Exercici 4</h3><br>";
+
+$info = array("name" => "Xavi", "age" => "40", "email" => "itacademy@gmail.com", "pref meal" => "pizza");
+
+echo $info['name'];
 
