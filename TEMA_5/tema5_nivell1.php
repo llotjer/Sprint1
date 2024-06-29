@@ -2,7 +2,7 @@
 
 abstract class Animal{
 
-    public $cry;
+    public $cry; //This is the default word for the sound of any animal.
 
     public function __construct(string $cry){
         $this->cry = $cry;
