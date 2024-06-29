@@ -1,6 +1,6 @@
 <?php
 
-echo "<h3>Exercici 1</h3><br>";
+//Exercici 1
 
 class Employee{
 
@@ -61,7 +61,7 @@ class Employee{
 
 }
 
-echo "<h3>Exercici 2</h3><br>";
+//Exercici 2
 
 class Shape{
 
