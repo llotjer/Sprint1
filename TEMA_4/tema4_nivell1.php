@@ -113,9 +113,8 @@ class Triangle extends Shape{
     //CONSTRUCTOR
 
     public function __construct($height, $width){
+       parent :: __construct($height, $width);
        
-        $this->$this->width = $width;
-        $this->$this->height = $height;
     }
 
     //METHODS
@@ -134,9 +133,7 @@ class Rectangle extends Shape{
     //CONSTRUCTOR
 
     public function __construct($height, $width){
-       
-        $this->$this->width = $width;
-        $this->$this->height = $height;
+        parent :: __construct($height, $width);
     }
 
     //METHODS
