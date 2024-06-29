@@ -2,50 +2,50 @@
 
 abstract class Animal{
     //PROPERTIES
-    public $cry; //This is the default word for the sound of any animal.
+    public $sound;
 
     //CONSTRUCTOR
-    public function __construct(string $cry){
-        $this->cry = $cry;
+    public function __construct(string $sound){
+        $this->sound = $sound;
     }
 
     //GETTERS
 
     public function getCry(): string{
-        return $this->cry;
+        return $this->sound;
     }
 
     //SETTERS
 
-    public function setCry(string $cry){
-        $this->cry = $cry;
+    public function setCry(string $sound){
+        $this->sound = $sound;
     }
 
     //METHOD
-    public abstract function toCry();
+    public abstract function makeSound();
 
 }
 
 class Dog extends Animal{
     //CONSTRUCTOR
-    public function __construct($cry){
-        parent::__construct($cry);
+    public function __construct($sound){
+        parent::__construct($sound);
     }
 
     //METHOD
-    public function toCry(): string{
+    public function makeSound(): string{
         return 'BUP, BUP!';
     }
 }
 
 class Cat extends Animal{
 
-    public function __construct($cry){
-        parent::__construct($cry);
+    public function __construct($sound){
+        parent::__construct($sound);
     }
 
     //METHOD
-    public function toCry(): string{
+    public function makeSound(): string{
         return 'MEU!';
     }
 }
