@@ -120,8 +120,8 @@ class Triangle extends Shape{
     //METHODS
 
     public function area(float $height, float $width) : float{
-        $area = ($width * $height) / 2;
-        return $area;
+        
+        return parent::area($height, $width) / 2;
 
     }
 
@@ -139,10 +139,9 @@ class Rectangle extends Shape{
     //METHODS
 
     public function area(float $height, float $width) : float{
-        $area = $width * $height;
-        return $area;
-
-    }
+       
+        return parent::area($height, $width);
+    } 
 
 
 }
