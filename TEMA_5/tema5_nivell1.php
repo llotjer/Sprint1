@@ -2,7 +2,7 @@
 
 abstract class Animal{
     //PROPERTIES
-    public $sound;
+    private $sound;
 
     //CONSTRUCTOR
     public function __construct(string $sound){
