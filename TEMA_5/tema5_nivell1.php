@@ -17,7 +17,7 @@ abstract class Animal{
 
     //SETTERS
 
-    public function setSound(string $sound){
+    public function setSound(string $sound): void{
         $this->sound = $sound;
     }
 
