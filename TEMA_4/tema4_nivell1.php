@@ -18,21 +18,21 @@ class Employee{
 
     //GETTERS
 
-    public function get_name(){
+    public function get_name(): string{
         return $this->name;
     }
 
-    public function get_salary(){
+    public function get_salary(): int{
         return $this->salary;
     }
 
     //SETTERS
 
-    public function set_name($name){
+    public function set_name($name): void{
         $this->name = $name;
     }
 
-    public function set_salary($salary){
+    public function set_salary($salary): void{
         $this->salary = $salary;
     }
 
@@ -88,10 +88,10 @@ class Shape{
 
     //SETTERS
 
-    public function set_width(float $width){
+    public function set_width(float $width): void{
         $this->width = $width;
     }
-    public function set_height(float $height){
+    public function set_height(float $height): void{
         $this->height = $height;
     }
 
