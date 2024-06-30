@@ -11,13 +11,13 @@ abstract class Animal{
 
     //GETTERS
 
-    public function getCry(): string{
+    public function getSound(): string{
         return $this->sound;
     }
 
     //SETTERS
 
-    public function setCry(string $sound){
+    public function setSound(string $sound){
         $this->sound = $sound;
     }
 
