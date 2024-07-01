@@ -89,8 +89,8 @@ class Shape{
 
     //METHODS
 
-    public function area(float $height, float $width) : float{
-        $area = $width * $height;
+    public function area() : float{
+        $area = this->$width * this->$height;
         return $area;
 
     }
