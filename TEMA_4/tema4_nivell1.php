@@ -10,7 +10,7 @@ class Employee{
 
     //CONSTRUCTOR
 
-    public function __construct(string $name, int $salary){
+    public function __construct(string $name, int $salary){ //This would be the initializa method that we have to create by statement.
 
         $this->name = $name;
         $this->salary = $salary;
@@ -34,14 +34,6 @@ class Employee{
 
     public function set_salary($salary): void{
         $this->salary = $salary;
-    }
-
-    //METHODS
-
-    public function initialize(string $name, int $salary){
-
-        //I understand by enunciate, that this method is emtpy, although it should have some code in it. 
-        //I would use it instead of the setters maybe, but i don't know the initial pourpose of it.
     }
 
     public function print() : string{
