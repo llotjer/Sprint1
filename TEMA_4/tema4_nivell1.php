@@ -55,7 +55,7 @@ class Employee{
 
 //Exercici 2
 
-class Shape{
+abstract class Shape{
 
     //PROPERTIES
     private $width;
@@ -89,15 +89,7 @@ class Shape{
 
     //METHODS
 
-    public function area() : float{
-        $area = this->$width * this->$height;
-        return $area;
-
-    }
-
-
-
-
+    public abstract function area();
 }
 
 class Triangle extends Shape{
@@ -113,7 +105,7 @@ class Triangle extends Shape{
 
     public function area() : float{
         
-        return parent::area() / 2;
+        return (parent::get_width()*parent::get_height()) / 2;
 
     }
 
@@ -132,7 +124,7 @@ class Rectangle extends Shape{
 
     public function area() : float{
        
-        return parent::area();
+        return parent::get_width()*parent::get_height();
     } 
 
 
