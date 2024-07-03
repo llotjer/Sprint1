@@ -32,7 +32,7 @@ function checkSpecialChar(array $words, string $specialChar) : bool{
     foreach($words as $word){
 
         if(stripos($word, $specialChar) === false){
-            $match = false;
+            return false;
         }
     }
 
@@ -51,5 +51,7 @@ echo "<h3>Exercici 4</h3><br>";
 
 $info = array("name" => "Xavi", "age" => "40", "email" => "itacademy@gmail.com", "pref meal" => "pizza");
 
-echo $info['name'];
+echo "<pre>";
+print_r($info);
+echo "</pre>";
 
