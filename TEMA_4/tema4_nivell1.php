@@ -58,8 +58,8 @@ class Employee{
 abstract class Shape{
 
     //PROPERTIES
-    private $width;
-    private $height;
+    protected $width;
+    protected $height;
 
     //CONSTRUCTOR
 
@@ -97,7 +97,7 @@ class Triangle extends Shape{
     //CONSTRUCTOR
 
     public function __construct($height, $width){
-       parent :: __construct($height, $width);
+       parent:: __construct($height, $width);
        
     }
 
@@ -105,7 +105,7 @@ class Triangle extends Shape{
 
     public function area() : float{
         
-        return (parent::get_width()*parent::get_height()) / 2;
+        return ($this->width*$this->height) / 2;
 
     }
 
@@ -117,14 +117,14 @@ class Rectangle extends Shape{
     //CONSTRUCTOR
 
     public function __construct($height, $width){
-        parent :: __construct($height, $width);
+        parent:: __construct($height, $width);
     }
 
     //METHODS
 
     public function area() : float{
        
-        return parent::get_width()*parent::get_height();
+        return $this->width*$this->height;
     } 
 
 
