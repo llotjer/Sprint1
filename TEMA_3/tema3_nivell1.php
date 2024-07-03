@@ -51,7 +51,5 @@ echo "<h3>Exercici 4</h3><br>";
 
 $info = array("name" => "Xavi", "age" => "40", "email" => "itacademy@gmail.com", "pref meal" => "pizza");
 
-echo "<pre>";
-print_r($info);
-echo "</pre>";
+echo $info['name'];
 
