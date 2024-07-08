@@ -1,33 +1,16 @@
 <?php
 
-class Dog implements sound{
+class Dog extends Animal{
     
-    //PROPERTIES
-    private $name;
-    private $sound;
-
     //CONSTRUCTOR
     public function __construct($name){
        $this->sound = 'BUP, BUP!';
        $this->name = $name;
     }
 
-    //GETTERS
+    //GETTER
     public function getName(): string{
         return $this->name;
-    }
-
-    public function getSound(): string{
-        return $this->sound;
-    }
-
-    //SETTERS
-    public function setName(string $name): void{
-        $this->name = $name;
-    }
-
-    public function setSound(string $sound): void{
-        $this->sound = $sound;
     }
 
     //METHOD
