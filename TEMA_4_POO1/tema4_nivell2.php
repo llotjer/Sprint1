@@ -3,28 +3,34 @@
 require 'tema4_nivell2_class_PokerDice.php';
 
 $dices = [];
-//$throws = [];
-$shapes = [];
+$shapes1 = [];
+$shapes2 = [];
+$getTotalThrows = 0; // Se que demanes un mètode, però m'ha semblat que així queda molt més simplificat.
 
-$dice1 = new PokerDice();
-$dice2 = new PokerDice();
-$dice3 = new PokerDice();
-$dice4 = new PokerDice();
-$dice5 = new PokerDice();
-
-array_push($dices, $dice1, $dice2, $dice3, $dice4, $dice5);
-
-foreach ($dices as $dice) {
-    $diceThrows += 1;
-    $shape = $dice->throw();
-    array_push($shapes, $dice->shapeName($shape));
-    echo $dice->shapeName($shape) . "\n";
-    /* array_push($throws, $diceThrows);
-    array_push($dices, $throws, $shapes); */
-    //$dice->setTotalThrows($shape);
+for($i = 0; $i < 5; $i++) {
+    $dices[$i] = new PokerDice();
 }
 
-//print_r($dices[0]->getTotalThrows());
-print_r($dices);
-print_r($throws);
-print_r($shapes);
+foreach ($dices as $dice) {
+    ++$getTotalThrows;
+    $shape = $dice->throw();
+    array_push($shapes1, $dice->shapeName($shape));
+    //echo $dice->shapeName($shape) . "\n";
+}
+
+echo "<pre>";
+print_r($shapes1) . "\n\n";
+echo "</pre>";
+echo "El número total de vegades que s'han tirat els daus és : " . $getTotalThrows . ".";
+
+foreach ($dices as $dice) {
+    ++$getTotalThrows;
+    $shape = $dice->throw();
+    array_push($shapes2, $dice->shapeName($shape));
+    //echo $dice->shapeName($shape) . "\n";
+}
+
+echo "<pre>";
+print_r($shapes2) . "\n\n";
+echo "</pre>";
+echo "El número total de vegades que s'han tirat els daus és : " . $getTotalThrows . ".";
