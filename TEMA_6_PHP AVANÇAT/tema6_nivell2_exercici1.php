@@ -3,7 +3,7 @@
 use Themes;
 use Resources;
 
-class Php{
+class Php_Info{
 
     //PROPERTIES
     private $name;
