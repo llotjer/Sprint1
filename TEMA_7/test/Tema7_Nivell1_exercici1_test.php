@@ -1,23 +1,30 @@
-<?php //declare(strict_types=1); //This makes test results must be as iqual as === does.
+<?php //declare(strict_types=1); This makes test results must be as iqual as === does.
 
 use PHPUnit\Framework\TestCase;
 class NumberCheckerTest extends TestCase{
 
-	public function __construct(private int $number){}
+	private $numberChecker;
+	private $number = [-1,2];
+	private $numberRand = array_rand($this->number,1); //I assume it's not the very best way to test anything, 
+													   //i would use a specific number per parameter for sure,
+								 					   //but this way i can expose both at the same time.
+													   //Not practical, but theoretical.
 
-	public function testDoesIsEvenCorrectly(): bool {
+	public function setUp():void{ //this method is used to create a new instance of the class in each test. PHPUnit will call it automatically.
+
+		$this->numberChecker = new NumberChecker($this->numberRand);
+
+	}
+
+	public function testDoesIsEvenPropertly(): bool {
 		
-		$numberChecker = new NumberChecker($this->number);
-
-		$this->assertTrue($this->number%2 === 0, $numberChecker->isEven());
+		$this->assertTrue($this->numberRand%2 === 0, $this->numberChecker->isEven());
 		
 		return true;
 	}
-	public function testDoesIsPositiveCorrectly(): bool {
+	public function testDoesIsPositivePropertly(): bool {
 
-		$numberChecker = new NumberChecker($this->number);
-		
-		$this->assertTrue($this->number > 0, $numberChecker->isPositive());
+		$this->assertTrue($this->numberRand > 0, $this->numberChecker->isPositive());
 
 		return true;
 	}

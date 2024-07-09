@@ -1,27 +1,30 @@
 <?php
 
-function isDiscerningByNotesPropertly(){
+use MyNotes\Notes;
+use PHPUnit\Framework\TestCase;
 
-$response = "";
-$nota = array(1,2,3,4,5,6,7,8,9,10);
-$notaRandom = $nota[array_rand($nota)];
-define("NOTA60", 6);
-define("NOTA45", 4.5);
-define("NOTA33", 3.3);
+class DiscerningByNotesTest extends TestCase {
 
-if($notaRandom >= NOTA60){
-    $response = "Nota: " . $notaRandom . " - Grau : Primera Divisió.";
-}elseif($notaRandom < NOTA60 && $notaRandom >= NOTA45){
-    $response = "Nota: " . $notaRandom . " - Grau : Segona Divisió.";
-}elseif($notaRandom < NOTA45 && $notaRandom >= NOTA33){
-    $response = "Nota: " . $notaRandom . " - Grau : Tercera Divisió.";
-}elseif($notaRandom < NOTA33){
-    $response = "Nota: " . $notaRandom . " - L'alumne reprovarà.";
+   protected $nota;
+
+    public function setUp():void{
+
+		$this->nota = new Notes;
+
+	}
+
+        function testDiscerningByNotes(){
+          if($this->nota->DiscerningByNotes() >= $this->nota::PRIME_D) {
+           $this->assertGreaterThanOrEqual($this->nota::PRIME_D, $this->nota->discerningByNotes(), "La nota no és suficient per a promocionar a Primera Divisió");
+          } elseif($this->nota->DiscerningByNotes() >= $this->nota::SECOND_D){
+           $this->assertGreaterThanOrEqual($this->nota::SECOND_D, $this->nota->DiscerningByNotes(),  "La nota no és suficient per a promocionar a Segona Divisió");
+          } elseif($this->nota->DiscerningByNotes() >= $this->nota::REPROVE){
+           $this->assertGreaterThanOrEqual($this->nota::SECOND_D, $this->nota->DiscerningByNotes(),  "La nota no és suficient per a promocionar a Tercera Divisió");
+          } elseif($this->nota->DiscerningByNotes() < $this->nota::REPROVE){
+           $this->assertLessThan($this->nota::SECOND_D, $this->nota->DiscerningByNotes(),  "La nota no és suficient per a continuar, hauràs de repetir");
+          }
+        
+        }
+
+        
 }
-
-return $response;
-
-}
-
-echo discerningByNotes() . "<br>";
-echo "<br>";

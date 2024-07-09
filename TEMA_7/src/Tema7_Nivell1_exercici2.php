@@ -1,27 +1,39 @@
 <?php
 
-function discerningByNotes(){
+namespace MyNotes;
+//I created a class so i can call an object of this class to test with PHPUnit in test file. Adapted all to properties and methods.
+class Notes{
 
-$response = "";
-$nota = array(1,2,3,4,5,6,7,8,9,10);
-$notaRandom = $nota[array_rand($nota)];
-define("NOTA60", 6);
-define("NOTA45", 4.5);
-define("NOTA33", 3.3);
+    //PROPERTIES
+    protected $nota;
+    const PRIME_D = 6; //consts in a class are static properties, and can be accessed without creating an object.
+    const SECOND_D = 4.5;
+    const REPROVE = 3.3;
 
-if($notaRandom >= NOTA60){
-    $response = "Nota: " . $notaRandom . " - Grau : Primera Divisió.";
-}elseif($notaRandom < NOTA60 && $notaRandom >= NOTA45){
-    $response = "Nota: " . $notaRandom . " - Grau : Segona Divisió.";
-}elseif($notaRandom < NOTA45 && $notaRandom >= NOTA33){
-    $response = "Nota: " . $notaRandom . " - Grau : Tercera Divisió.";
-}elseif($notaRandom < NOTA33){
-    $response = "Nota: " . $notaRandom . " - L'alumne reprovarà.";
+    //CONSTRUCTOR
+    public function __construct(){
+        $this->nota = rand(1,10);
+        
+    }
+
+    //METHODS
+    public function DiscerningByNotes():string{
+
+        $response = "";
+       
+        if($this->nota >= self::PRIME_D){
+            $response = "Nota: " . $this->nota . " - Grau : Primera Divisió.";
+        }elseif($this->nota >= self::SECOND_D){ //Used self:: instead of this-> because in classes, constants are static properties.
+            $response = "Nota: " . $this->nota . " - Grau : Segona Divisió.";
+        }elseif($this->nota >= self::REPROVE){//Changed condition, making it less mathematical redundant.
+            $response = "Nota: " . $this->nota . " - Grau : Tercera Divisió.";
+        }elseif($this->nota < self::REPROVE){
+            $response = "Nota: " . $this->nota . " - L'alumne reprovarà.";
+        }
+        
+        return $response;
+        
+    }
 }
 
-return $response;
 
-}
-
-echo discerningByNotes() . "<br>";
-echo "<br>";
