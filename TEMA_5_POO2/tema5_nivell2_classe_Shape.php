@@ -7,6 +7,8 @@ abstract class Shape{
     //PROPERTIES
     protected $width;
     protected $height;
+    const PI = 3.14;
+    protected $radi;
 
     //CONSTRUCTOR
 
@@ -14,6 +16,11 @@ abstract class Shape{
         
         $this->width = $width;
         $this->height = $height;
+    }
+
+    public function __constructCercle(float $radi){
+        $this->radi = $radi;
+        
     }
 
     //GETTERS
@@ -24,6 +31,9 @@ abstract class Shape{
     public function get_height() : float{
         return $this->height;
     }
+    public function get_radi() : float{
+        return $this->radi;
+    }
 
     //SETTERS
 
@@ -32,6 +42,9 @@ abstract class Shape{
     }
     public function set_height(float $height): void{
         $this->height = $height;
+    }
+    public function set_radi(float $radi): void{
+        $this->radi = $radi;
     }
 
     //METHODS
