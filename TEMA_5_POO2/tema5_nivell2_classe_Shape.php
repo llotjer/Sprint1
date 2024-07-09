@@ -12,16 +12,18 @@ abstract class Shape{
 
     //CONSTRUCTOR
 
+    public function __constructCercle(float $radi){
+        $this->radi = $radi;
+        
+    }
+
     public function __construct(float $width, float $height){
         
         $this->width = $width;
         $this->height = $height;
     }
 
-    public function __constructCercle(float $radi){
-        $this->radi = $radi;
-        
-    }
+    
 
     //GETTERS
 
