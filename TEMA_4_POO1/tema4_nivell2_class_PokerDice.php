@@ -15,13 +15,10 @@ A més, programa el mètode getTotalThrows que ha de mostrar el nombre total de 
 class PokerDice{
 
     const DICE_SIDE = ['As', 'K', 'Q', 'J', '7', '8'];
-    private $totalThrows = [];
-
-    public function setTotalThrows($throw): void{
-        array_push($this->totalThrows, $throw);
-    }
+    private static $totalThrows = 0;
    
     public function throw():int{
+        self::$totalThrows++;
         return array_rand(self::DICE_SIDE);
     }
 
@@ -29,8 +26,8 @@ class PokerDice{
         return self::DICE_SIDE[$throw];
     }
 
-    public function getTotalThrows():array{
-        return $this->totalThrows;
+    public function getTotalThrows():int{
+        return self::$totalThrows;
     }
 
 }
