@@ -1,5 +1,7 @@
 <?php 
 
+////EXERCICI 1
+
 echo "<h3>Exercici 1</h3>" . "<br>";
 
 $surname = "Reynal";
@@ -13,6 +15,8 @@ define("NAME", "Xavi");
 
 echo "<h1>" . NAME . "</h1>";
 
+//EXERCICI 2
+
 echo "<h3>Exercici 2</h3>" . "<br>";
 
 $greet = "Hello, World";
@@ -25,7 +29,11 @@ echo strrev($greet) . "<br>";
 echo $greet . ". " . $str . "<br>";
 echo "<br>";
 
+//EXERCICI 3
+
 echo "<h3>Exercici 3</h3>" . "<br>";
+
+//A
 
 echo "<h5>a)</h5>" . "<br>";
 
@@ -44,6 +52,8 @@ echo "El doble de cada variable: " . $x * 2 . ", ", $y * 2 . ", ", $n * 2 . ", "
 echo "Valor de la suma entre totes les variables: " . $x + $y + $n + $m . "<br>";
 echo "Valor del producte entre totes les variables: " . $x * $y * $n * $m . "<br>";
 echo "<br>";
+
+//B
 
 echo "<h5>b)</h5>" . "<br>";
 
@@ -71,28 +81,32 @@ function calculate(int $x, int $y, string $randomOperator) : String{
 echo calculate($x, $y, $randomOperator) . "<br>";
 echo "<br>";
 
+//EXERCICI 4
+
 echo "<h3>Exercici 4</h3>" . "<br>";
 
-$num = rand(1, 10);
-$inc = array(0, 1, 2, 3);
-$incRandom = $inc[array_rand($inc)];
+$num = rand(0, 10);
+$inc = rand(1, 3);
 
-function counting($num, $incRandom){
-   
+function counting(int $inc, int $num = 10): string{
+ 
     $count = "";
     $sum = 0;
 
-    for($i = 1; $i <= $num; $i = $i + $incRandom){
+    for($i = 1; $i <= $num; $i = $i + $inc){
        
         $sum += $i;
-        $count .= ($i == $num || ($i == ($num - 1) && $incRandom == 2)) ? strval($i) : strval($i) . " + " ;
+        $count .= ($i == $num || ($i == ($num - 1) && $inc == 2)) ? strval($i) : strval($i) . " + " ;
         
     }
-    return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $incRandom . " en " . $incRandom . ".";
+    return $count . " = " . $sum . "<br>" . "La suma ha estat de " . $inc . " en " . $inc . ".";
 }
    
-echo counting($num, $incRandom) . "<br>";
+echo counting($inc, $num) . "<br>"; // Without a default parameter.
+echo counting($inc) . "<br>"; // With a default parameter.
 echo "<br>";
+
+//EXERCICI 5
 
 echo "<h3>Exercici 5</h3>" . "<br>";
 
@@ -121,6 +135,8 @@ return $response;
 
 echo discerningByNotes() . "<br>";
 echo "<br>";
+
+//EXERCICI 6
 
 echo "<h3>Exercici 6</h3>" . "<br>";
 

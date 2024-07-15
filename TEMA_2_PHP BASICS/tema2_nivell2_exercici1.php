@@ -1,7 +1,7 @@
 <?php
 
-define("SEG",1);
-define("MIN",SEG*60);
+//define("SEG",1);
+define("MIN",1);
 
 $tempsTrucada = MIN * rand(1,180); // Calculating call duration from 1 minute to 3 hours.
 
