@@ -31,4 +31,30 @@ class Cinema{
     public function addFilm(Pelicula $film){
         array_push($this->films, $film);
     }
+
+    public function longestFilm(): string{
+    $lengths = [];
+        foreach($this->films as $film){
+            
+            array_push($lengths, $film->getLength());
+        }
+    $maxLenght = max($lengths); //amb la funció max aïllem el valor màxim de l'array.
+    $filmMaxLenghtPos = array_search($maxLenght, $lengths);
+    return "La pel·lícula amb major duració del cinema " . $this->name . " és " . $this->films[$filmMaxLenghtPos]->getTitle() 
+                                                                                    . " amb una duració de: " . $maxLenght . "h.<br>";
+    }
+
+    public function searchByDirector(string $director):string{
+        
+        $resposta = "";
+            
+        foreach($this->films as $film){
+            
+            if($film->getDirector() == $director){
+                    $resposta = "El cinema " . $this->name . ", té la pel·lícula:" . $film->getTitle() . " del director " . $film->getDirector() . ".";
+            }
+        }
+        return $resposta;
+
+    }
 }

@@ -25,7 +25,7 @@ class Pelicula{
     }
 
     public function __toString(){
-        return "Title: " . $this->title . "\nDirector: " . $this->director . "\nLength: " . $this->length . "h\n";
+        return "Title: " . $this->title . "<br>Director: " . $this->director . "<br>Length: " . $this->length . "h<br>";
     }
 
 
