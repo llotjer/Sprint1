@@ -1,30 +1,12 @@
 <?php
 
-use Themes;
-use Resources;
+require 'tema6_nivell2_class_PhpInfo.php';
 
-class Php_Info{
+$obj1 = new Php_Info('Tema', 'PHP', 'Fitxer', 'www.php.com');
+$obj2 = new Php_Info('Font', 'SQL', 'Vídeo', 'www.youtube.com');
 
-    //PROPERTIES
-    private $name;
-    private $theme;
-    private $url;
-    private $resource;
+echo 'El tema d\'aquest objecte és: ' . $obj1->getThemes() . "<br>";
+echo 'La font d\'aquest objecte és: ' . $obj1->getResources() . "<br><br>";
 
-    //CONSTRUCTOR
-    public function __construct($name, $url){
-        $this->name = $name;
-        $this->url = $url;
-    }
-
-
-    //METHODS
-
-    public function getThemes(Themes $theme){
-        $this->theme = $theme;
-    }
-
-    public function getResources(Resources $resource){
-        $this->resource = $resource;
-    }
-}
+echo 'El tema d\'aquest objecte és: ' . $obj2->getThemes() . "<br>";
+echo 'La font d\'aquest objecte és: ' . $obj2->getResources() . "<br>";
