@@ -1,48 +1,37 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-class NumberChecker2Test extends TestCase{
+class Tema7_Nivell2_exercici1_dataProviderTest extends TestCase{
 
-	/**
-     * @dataProvider provideEvenCases
-	 * @dataProvider providePositiveCases
-     */
+#[\PHPUnit\Framework\Attributes\DataProvider('provideEvenPositiveCases')]
+public function testIsEvenAndPositive($number): void {
+    $numberChecker = new NumberCheckerDP($number);
+    $this->assertTrue($numberChecker->isEven());
+    $this->assertTrue($numberChecker->isPositive());
+}
 
-	private $numberChecker1;
-	private $numberChecker2;
+#[\PHPUnit\Framework\Attributes\DataProvider('provideOddNegativeCases')]
+public function testIsOddAndNegative($number): void {
+    $numberChecker = new NumberCheckerDP($number);
+    $this->assertFalse($numberChecker->isEven());
+    $this->assertFalse($numberChecker->isPositive());
+}
 
-	public function setUp():void{
-
-		$this->numberChecker1 = new NumberChecker($this->provideEvenCases());
-		$this->numberChecker2 = new NumberChecker($this->providePositiveCases());
-
+	public static function provideEvenPositiveCases(): array{
+		return [
+			[2],
+			[4],
+			[6]
+		];
 	}
 
-	public function testIsEven(): void {
-				
-		$this->assertTrue($this->numberChecker1->isEven());
-		$this->assertTrue($this->numberChecker2->isEven());
-		
-	}
-	public function testIsPositive(): void {
-
-		$this->assertTrue($this->numberChecker1->isPositive());
-		$this->assertTrue($this->numberChecker2->isPositive());
-
+	public static function provideOddNegativeCases(): array{
+		return [
+			[-1],
+			[-3],
+			[-5]
+		];
 	}
 
-	public function provideEvenCases(): int{
-		return 
-			[1]
-			[2];
-	
-	}
-
-	public function providePositiveCases(): int{
-		return 
-			[-1]
-			[1];
-		
-	}
 
 }

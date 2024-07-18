@@ -3,11 +3,11 @@
 use MyNotes\Notes;
 use PHPUnit\Framework\TestCase;
 
-class DiscerningByNotesTest extends TestCase {
+class Tema7_Nivell1_exercici2Test extends TestCase {
 
    protected $nota;
 
-    public function setUp():void{
+    public function setUp(): void{
 
 		$this->nota = new Notes;
 

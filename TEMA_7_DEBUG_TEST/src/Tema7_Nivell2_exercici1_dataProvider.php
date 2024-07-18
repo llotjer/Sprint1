@@ -1,5 +1,5 @@
 <?php
-class NumberChecker  {
+class NumberCheckerDP  {
 
 
 	public function __construct(private int $number){}

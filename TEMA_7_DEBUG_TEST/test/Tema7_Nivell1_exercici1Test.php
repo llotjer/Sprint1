@@ -1,7 +1,7 @@
 <?php //declare(strict_types=1); This makes test results must be as iqual as === does.
 
 use PHPUnit\Framework\TestCase;
-class NumberCheckerTest extends TestCase{
+class Tema7_Nivell1_exercici1Test extends TestCase{
 
 	private $numberChecker1;
 	private $numberChecker2;
